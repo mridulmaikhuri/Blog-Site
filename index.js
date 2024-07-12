@@ -6,11 +6,13 @@ const blogRouter = require('./routes/blog');
 const cookieParser = require('cookie-parser');
 const { connectToMongoDb } = require('./connection');
 const { isUserLoggedIn } = require('./middlewares/auth');
+const dotenv = require('dotenv')
+dotenv.config();
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
-connectToMongoDb("mongodb://localhost:27017/blog-db")
+connectToMongoDb(process.env.MONGO_URL)
 .then(() => console.log("connected to mongodb"));
 
 app.set('view engine', 'ejs');
