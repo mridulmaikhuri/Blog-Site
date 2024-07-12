@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="./css/home.css">
+    <title>Blogs</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <div id = "all-blogs">
+        <% allBlogs.forEach(blog => { %>
+            <div class="card mt-3 ms-3" style="width: 26rem;">
+                <img src="<%= blog.image %>" class="card-img-top" alt="image" width="100" height=250">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.title %></h5>
+                  <p class="card-text"><%= blog.body.substr(0, 50) %>....</p>
+                  <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read the blog</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+</body>
+<%- include('./partials/scripts.ejs') %>
+</html>

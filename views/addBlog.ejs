@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Blogs</title>
+    <link rel="stylesheet" href="./css/addBlog.css">
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <form action="/blog/upload" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="photo">Choose Cover Photo</label><br>
+            <input type="file" name="photo" id="photo" accept="image/*">
+        </div> 
+        <div>
+            <label for="body">Body</label><br>
+            <textarea name="body" id="body" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+    <%- include('./partials/scripts.ejs') %>
+</body>
+<script src="./js/addBlog.js"></script>
+</html>

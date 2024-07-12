@@ -1,0 +1,15 @@
+textarea {
+    width: 90vw;
+    height: 50vh;
+}
+form {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+#title {
+    width: 90vw;
+}
+#photo {
+    border: 1px solid black;
+    width: 90vw;
+}
