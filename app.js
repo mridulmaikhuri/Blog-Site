@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-connectToMongoDb(process.env.MONGO_URL)
+connectToMongoDb("mongodb+srv://Mridul:1234@cluster0.mp5bkga.mongodb.net/")
 .then(() => console.log("connected to mongodb"));
 
 app.set('view engine', 'ejs');
